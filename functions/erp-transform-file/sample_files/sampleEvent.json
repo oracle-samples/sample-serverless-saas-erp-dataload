@@ -1,0 +1,28 @@
+{
+  "eventType": "com.oraclecloud.objectstorage.createobject",
+  "cloudEventsVersion": "0.1",
+  "eventTypeVersion": "2.0",
+  "source": "ObjectStorage",
+  "eventTime": "2020-09-21T15:58:34Z",
+  "contentType": "application/json",
+  "data": {
+    "compartmentId": "ocid1.compartment.oc1..xxxx",
+    "compartmentName": "xxxx-compartment_20191015152819",
+    "resourceName": "createInvoiceSample.json",
+    "resourceId": "/n/ateamsaas/b/Serverless_Integration_json_inbound/o/createInvoiceSample.json",
+    "availabilityDomain": "PHX-AD-1",
+    "additionalDetails": {
+      "bucketName": "Serverless_Integration_json_inbound",
+      "versionId": "xxxxx-b94c-47ab-8f78-xxx",
+      "archivalState": "Available",
+      "namespace": "ateamsaas",
+      "bucketId": "ocid1.bucket.oc1.phx.xxxx",
+      "eTag": "xx-1335-45f7-b0f3-xxx"
+    }
+  },
+  "eventID": "xxx-b52f-6999-8ee3-xx",
+  "extensions": {
+    "compartmentId": "ocid1.compartment.oc1..xxxx"
+  }
+}
+

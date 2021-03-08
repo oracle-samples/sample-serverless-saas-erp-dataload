@@ -1,0 +1,38 @@
+{
+  "invoices": [
+    {
+      "invoiceId": "222290",
+      "businessUnit": "US1 Business Unit",
+      "source": "External",
+      "invoiceNumber": "111190",
+      "invoiceAmount": "4242.00",
+      "invoiceDate" : "2019/02/01",
+      "supplierName": "Staffing Services",
+      "supplierNumber" : 1253,
+      "supplierSite" : "Staffing US1",
+      "invoiceCurrency": "USD",
+      "paymentCurrency": "USD",
+      "description" : "New Invoice from global Angels",
+      "importSet": "AP_Cloud_Demo",
+      "invoiceType": "STANDARD",
+      "paymentTerms": "Immediate",
+      "termsDate": "2019/02/01",
+      "accountingDate": "2019/02/01",
+      "paymentMethod": "CHECK",
+      "invoiceLines": [
+        {
+          "amount": "200",
+          "description" : "Invoice Line Description"
+        },
+        {
+          "amount": "300",
+          "description" : "Invoice Line Description2",
+          "invoiceQuantity": "10",
+          "unitPrice": "5"
+
+        }
+      ]
+    }
+
+  ]
+}

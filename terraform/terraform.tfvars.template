@@ -1,0 +1,37 @@
+functionsapp = {
+    subnet = "<yoursubnet>>"
+    appname = "Serverless_Integration"
+    pathprefix = "/serverless_integration"
+
+    syslogurl = null
+    
+    # fn context file can be found in  $HOME/.fn/contexts/something.yaml
+    contextfile = "<absolute path to your .fn context file>"
+    config_template = "appconfig.tmpl"
+}
+
+functions = [
+    {
+        fnpath = "../functions/erp-transform-file"
+        path = null
+        methods = []
+        yamlfile = "func.yaml"
+        timeout = 150
+    },
+    {
+        fnpath = "../functions/erp-file-load"
+        path =null
+        methods = []
+        yamlfile = "func.yaml"
+        timeout = 150
+    },
+    {
+        fnpath = "../functions/erp-callback"
+        path = "/erp-callback"
+        methods = ["GET"]
+        yamlfile = "func.yaml"
+        timeout = 150
+    },
+]
+
+

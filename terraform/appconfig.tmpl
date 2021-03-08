@@ -1,0 +1,15 @@
+{
+    "json_inbound_bucket_name" : "${datafile_buckets.json_inbound_bucket_name}",
+    "zip_inbound_bucket_name" : "${datafile_buckets.zip_inbound_bucket_name}",
+    "processing_bucket_name" : "${datafile_buckets.processing_bucket_name}",
+    "succeeded_bucket_name" : "${datafile_buckets.succeeded_bucket_name}",
+    "failed_bucket_name" : "${datafile_buckets.failed_bucket_name}",
+    "ons_error_topic_ocid" : "${ons_error_topic_ocid}",
+    "ons_info_topic_ocid" : "${ons_info_topic_ocid}",
+    "erp_url" : "https://${fusion_server.erp_hostname}/fscmRestApi/resources/latest/erpintegrations",
+    "erp_username" : "${fusion_server.erp_username}",
+    "erp_password_vault_ocid" : "${erp_password_vault_ocid}",
+    "erp_jobname" : "${fusion_properties.erp_jobname}",
+    "erp_paramlist" : "${fusion_properties.erp_paramlist}",
+    "erp_callback_url" : "https://${apigw.hostname}${fnapp.pathprefix}${fn["erp-callback"].path}"
+}

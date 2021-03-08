@@ -1,0 +1,81 @@
+<!-- Copyright (c) 2021 Oracle, Inc.
+Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+-->
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing">
+    <env:Header>
+        <fmw-context xmlns="http://xmlns.oracle.com/fmw/context/1.0"/>
+        <wsa:To>https://xxxxx.xxx.us-phoenix-1.oci.customer-oci.com/erpcallback/callback
+        </wsa:To>
+        <wsa:Action>http://xmlns.oracle.com/scheduler/ESSWebService/getCompletionStatus/Response</wsa:Action>
+        <wsa:MessageID>urn:uuid:xxxx</wsa:MessageID>
+        <wsa:RelatesTo>urn:uuid:xxxxx</wsa:RelatesTo>
+        <wsa:ReplyTo>
+            <wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
+        </wsa:ReplyTo>
+        <wsse:Security env:mustUnderstand="1"
+                       xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+            <saml:Assertion MajorVersion="1" MinorVersion="1" xmlns:saml="urn:oasis:names:tc:SAML:1.0:assertion"
+                            AssertionID="SAML-xxxxxx" IssueInstant="2020-09-23T15:53:01Z"
+                            Issuer="www.oracle.com">
+                <saml:Conditions NotBefore="2020-09-23T15:53:01Z" NotOnOrAfter="2020-09-27T03:13:01Z"/>
+                <saml:AuthenticationStatement AuthenticationInstant="2020-09-23T15:53:01Z"
+                                              AuthenticationMethod="urn:oasis:names:tc:SAML:1.0:am:password">
+                    <saml:Subject>
+                        <saml:NameIdentifier Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">
+                            CASEY.BROWN
+                        </saml:NameIdentifier>
+                        <saml:SubjectConfirmation>
+                            <saml:ConfirmationMethod>urn:oasis:names:tc:SAML:1.0:cm:bearer</saml:ConfirmationMethod>
+                        </saml:SubjectConfirmation>
+                    </saml:Subject>
+                </saml:AuthenticationStatement>
+                <dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+                    <dsig:SignedInfo>
+                        <dsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                        <dsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                        <dsig:Reference URI="#SAML-xxxxx">
+                            <dsig:Transforms>
+                                <dsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                                <dsig:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                            </dsig:Transforms>
+                            <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                            <dsig:DigestValue>xxxx/xxxx=</dsig:DigestValue>
+                        </dsig:Reference>
+                    </dsig:SignedInfo>
+                    <dsig:SignatureValue>
+                        xxxxx
+                    </dsig:SignatureValue>
+                    <dsig:KeyInfo xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+                        <dsig:X509Data>
+                            <dsig:X509Certificate>
+                            xxxxxx    
+                            </dsig:X509Certificate>
+                            <dsig:X509IssuerSerial>
+                                <dsig:X509IssuerName>CN=xx-2, DC=cloud, DC=oracle, DC=com</dsig:X509IssuerName>
+                                <dsig:X509SerialNumber>xxxx</dsig:X509SerialNumber>
+                            </dsig:X509IssuerSerial>
+                            <dsig:X509SubjectName>CN=xx, DC=cloud, DC=oracle, DC=com</dsig:X509SubjectName>
+                            <dsig:X509SKI>xxxx=</dsig:X509SKI>
+                        </dsig:X509Data>
+                    </dsig:KeyInfo>
+                </dsig:Signature>
+            </saml:Assertion>
+        </wsse:Security>
+    </env:Header>
+    <env:Body>
+        <ns0:onJobCompletion xmlns:ns0="http://xmlns.oracle.com/scheduler">
+            <requestId xmlns="">1726027</requestId>
+            <state xmlns="">SUCCEEDED</state>
+            <resultMessage xmlns="">{"JOBS":[{"JOBNAME":"Load Interface File for
+                Import","JOBPATH":"/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader","DOCUMENTNAME":"createInvoiceSample.zip","REQUESTID":"1726027","STATUS":"SUCCEEDED","CHILD":[{"JOBNAME":"Load
+                File to
+                Interface","JOBPATH":"/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader","REQUESTID":"1726027","STATUS":"SUCCEEDED"},{"JOBNAME":"Load
+                File to
+                Interface","JOBPATH":"/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader","REQUESTID":"1726027","STATUS":"SUCCEEDED"},{"JOBNAME":"Transfer
+                File","JOBPATH":"/oracle/apps/ess/financials/commonModules/shared/common/interfaceLoader","REQUESTID":"1726027","STATUS":"SUCCEEDED"}]},{"JOBNAME":"Import
+                Payables
+                Invoices","JOBPATH":"/oracle/apps/ess/financials/payables/invoices/transactions","REQUESTID":"1697819","STATUS":"SUCCEEDED"}],"SUMMARYSTATUS":"SUCCEEDED"}
+            </resultMessage>
+        </ns0:onJobCompletion>
+    </env:Body>
+</env:Envelope>

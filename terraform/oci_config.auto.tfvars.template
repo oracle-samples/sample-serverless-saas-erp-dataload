@@ -1,0 +1,12 @@
+# Copyright (c)  2021,  Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+
+# First few lines are copy of oci cli config
+# This file should not be put onto version control
+# This file is the same format as your OCI config file, 
+#
+user="ocid1.user.oc1..11111222233334444"
+fingerprint="11:22:33:44:55:66:77:88:99:00"
+key_file="/home/xxxxx/.oci/oci_api_key.pem"
+tenancy="ocid1.tenancy.oc1..112233445566787990"
+region="xx-yyyyyy-z"
