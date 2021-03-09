@@ -39,7 +39,7 @@ For more information please refer to the blog article on [A-Team Chronicles]( ht
 
 - Serverless solution
 - Demonstrates how to deploy the entire solution to OCI using Terraform
-  - Specific call out showing how to deploy Oracle Cloud functions to OCI using Terraform scripts
+  - Specific call out showing how to deploy Oracle Cloud Functions to OCI using Terraform scripts
 - Storing Oracle passwords securely within the OCI vault and retrieving them using Python code
 - Reading/writing data to OCI Storage buckets
 - Sending notifications to users 
@@ -59,7 +59,7 @@ A short video describing this architecture can be found on YouTube at this link 
 
 ### Pre-requisites
 
-1. Ensure Oracle Cloud Functions is installed and that you can deploy a simple Python based cloud function. If you haven't already installed and configured Oracle Cloud Functions then we can recommend going through the [Oracle cloud functions quickstart ](https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_faas_gettingstarted_quickview/functions_quickview_top/functions_quickview/index.html) as this will not only help you setup and configure your environment but also show you how to deploy some sample Oracle Cloud Functions.
+1. Ensure Oracle Cloud Functions is installed and that you can deploy a simple Python based cloud function. If you haven't already installed and configured Oracle Cloud Functions then we can recommend going through the [Oracle Cloud Functions quickstart ](https://www.oracle.com/webfolder/technetwork/tutorials/infographics/oci_faas_gettingstarted_quickview/functions_quickview_top/functions_quickview/index.html) as this will not only help you setup and configure your environment but also show you how to deploy some sample Oracle Cloud Functions.
 2. Ensure Terraform is installed and you are able to deploy OCI components to OCI (eg. create a storage bucket)
 3. Ensure Fusion Applications is functionally set up to accept the data you are looking to load
 
@@ -87,7 +87,7 @@ A short video describing this architecture can be found on YouTube at this link 
 
 8. This step creates all the resources in OCI , including the setup of a VCN, an API Gateway, uploading the Oracle Cloud Functions and creating a OCI Vault to store the Fusion ERP password. The Terraform script does not create the OCI Vault Secret as this is currently not possible using Terraform. The Terraform script will however create a dummy ERP password within the vault and you will need to update this with the real password for your Oracle Fusion ERP system.
 
-9. Update the *erppassword* secret within the Oracle vault 
+9. Update the *erppassword* secret within the Oracle Vault 
 
    - Log In to OCI console
 
@@ -121,13 +121,13 @@ The current sample imports invoices into Oracle Fusion.
 
 ## Troubleshooting
 
-- If things dont work, here are some [Troubleshooting tips for cloud functions](https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionstroubleshooting.htm) you can try.
+- If things dont work, here are some [troubleshooting tips for Oracle Cloud Functions](https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionstroubleshooting.htm) you can try.
 
-- The Oracle Cloud Functions are configured to emit logging info using standard system logging, this can be useful when debugging the functions. This logging can be either retrieved in OCI Logging or you can use a 3rd party remote syslogurl logging service. OCI Logging is installed/configured by default , if you want to use a 3rd party system like [papertrail](https://papertrailapp.com/) then setup the remote logging using the following command.
+- The Oracle Cloud Functions are configured to emit logging info using standard system logging, this can be useful when debugging the functions. This logging can be either retrieved in OCI Logging or you can use a 3rd party remote syslogurl logging service. OCI Logging is installed/configured by default , if you want to use a 3rd party system like [Papertrail](https://papertrailapp.com/) then setup the remote logging using the following command.
 
   `fn update app Serverless_Integration --syslog-url <syslogurl>`
 
-- For more information see this blog article by the development organisation [https://blogs.oracle.com/developers/simple-serverless-logging-for-oracle-function](https://blogs.oracle.com/developers/simple-serverless-logging-for-oracle-functions)
+- For more information see this [blog article](https://blogs.oracle.com/developers/simple-serverless-logging-for-oracle-functions) written by the Oracle OCI development organisation where they explain how to setup logging for Oracle Cloud Functions.
 
 ## Enhancing the sample
 
@@ -151,7 +151,7 @@ Supporting large files
 
 - The transform cloud function reads the entire JSON file into memory and generates the CSV file in Oracle Cloud Functions temporary storage. Whilst this approach is efficient it does mean there is a limit to the amount of data the cloud function can process. Currently the max amount of memory an Oracle Cloud Function can be allocated is 1Gb and disk maximums of 256Mb in */tmp* also apply. This means the max size of the zip file that can be created is approx. 256Mb before being transferred to OCI Object Storage Cloud. If you need to produce zip files larger than 256Mb then either split the load into smaller chunks or implement a streaming approach in the various Oracle Cloud Functions in this sample.
 
-  - See https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsaccessinglocalfilesystem.htm for more details on Oracle functions service limits
+  - See [Oracle Cloud Functions accessing filesystem documentation](https://docs.cloud.oracle.com/en-us/iaas/Content/Functions/Tasks/functionsaccessinglocalfilesystem.htm) link for more details on filesystem size limits 
 
 ## Security
 
@@ -159,7 +159,7 @@ Oracle takes security seriously and has a dedicated response team for [reporting
 
 ## Contributing
 
-We welcome all contributions to this sample and have a  [contribution guide](./CONTRIBUTING.md)  for you to follow if you'd like to contribute.
+We welcome all contributions to this sample and have a [contribution guide](./CONTRIBUTING.md) for you to follow if you'd like to contribute.
 
 ## Help
 
