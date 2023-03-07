@@ -165,4 +165,9 @@ We welcome all contributions to this sample and have a [contribution guide](./CO
 
 If you need help with this sample, please log an issue within this repository and the code owners will help out where we can.
 
-Copyright (c) 2021, Oracle and/or its affiliates. Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+## License
+
+Copyright (c) 2021, 2022 Oracle and/or its affiliates.
+
+Released under the Universal Permissive License v1.0 as shown at
+<https://oss.oracle.com/licenses/upl/>.
