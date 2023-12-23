@@ -4,4 +4,4 @@
 
 fdk==0.1.21
 oci==2.24.0
-requests==2.24.0
+requests==2.31.0
